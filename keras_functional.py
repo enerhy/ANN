@@ -52,6 +52,12 @@ model.compile(
   metrics=['accuracy']
 )
 
+-----#to compile with precision and recall
+model.compile(optimizer="sgd",
+              loss="binary_crossentropy",
+              metrics=[keras.metrics.Precision(), keras.metrics.Recall()])
+---------------------------
+
 # note: multiple ways to choose a backend
 # either theano, tensorflow, or cntk
 # https://keras.io/backend/
