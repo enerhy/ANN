@@ -67,6 +67,11 @@ model.compile(optimizer="sgd",
 r = model.fit(Xtrain, Ytrain, validation_data=(Xtest, Ytest), epochs=15, batch_size=32)
 print("Returned:", r)
 
+#Prediction -  if we dont use validation data in the fit method 
+prediction = model.predict(X_test)
+predict = np.argmax(prediction, axis=1)
+
+
 # print the available keys
 # should see: dict_keys(['val_loss', 'acc', 'loss', 'val_acc'])
 print(r.history.keys())
